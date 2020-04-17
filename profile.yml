@@ -1,0 +1,21 @@
+language:
+  name: "english"
+  code: "en-us"
+
+speech-to-text:
+  acoustic-model-type: "deepspeech"
+  acoustic-model: !env "${profile_dir}/model/output_graph.pbmm"
+  language-model: !env "${profile_dir}/lm.binary"
+  base-language-model: !env "${profile_dir}/model/lm.binary"
+  trie: !env "${profile_dir}/trie"
+  base-trie: !env "${profile_dir}/model/trie"
+  alphabet: !env "${profile_dir}/model/alphabet.txt"
+
+training:
+  acoustic-model-type: "deepspeech"
+  language-model: !env "${profile_dir}/lm.binary"
+  large-files:
+    - !env "${profile_dir}/model/lm.binary"
+    - !env "${profile_dir}/model/trie"
+    - !env "${profile_dir}/model/output_graph.pbmm"
+    - !env "${profile_dir}/model/output_graph.tflite"
