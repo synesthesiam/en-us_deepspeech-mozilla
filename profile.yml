@@ -10,6 +10,7 @@ speech-to-text:
   trie: !env "${profile_dir}/trie"
   base-trie: !env "${profile_dir}/model/trie"
   alphabet: !env "${profile_dir}/model/alphabet.txt"
+  phoneme-pronunciations: false
 
 training:
   acoustic-model-type: "deepspeech"
@@ -19,3 +20,4 @@ training:
     - !env "${profile_dir}/model/trie"
     - !env "${profile_dir}/model/output_graph.pbmm"
     - !env "${profile_dir}/model/output_graph.tflite"
+    - !env "${profile_dir}/base_language_model.fst"
