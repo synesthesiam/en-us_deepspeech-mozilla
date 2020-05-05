@@ -1,0 +1,1 @@
+{"text": "tell me the time", "intent": {"name": "GetTime", "confidence": 1.0}, "entities": [], "raw_text": "tell me the time", "tokens": ["tell", "me", "the", "time"], "raw_tokens": ["tell", "me", "the", "time"], "slots": {}, "intents": [], "recognize_seconds": 0.0009148120880126953}

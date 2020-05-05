@@ -1,3 +1,7 @@
+---
+name: "en-us_deepspeech-mozilla"
+version: "1.0"
+
 language:
   name: "english"
   code: "en-us"
@@ -21,3 +25,13 @@ training:
     - !env "${profile_dir}/model/output_graph.pbmm"
     - !env "${profile_dir}/model/output_graph.tflite"
     - !env "${profile_dir}/base_language_model.fst"
+
+platform:
+  - machine:
+      - armv6l
+      - armv7l
+      - arm64
+      - aarch64
+    settings:
+      speech-to-text:
+        acoustic-model: !env "${profile_dir}/model/output_graph.tflite"

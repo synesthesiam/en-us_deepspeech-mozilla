@@ -1,0 +1,1 @@
+{"text": "how cold is it", "intent": {"name": "GetTemperature", "confidence": 1.0}, "entities": [], "raw_text": "how cold is it", "tokens": ["how", "cold", "is", "it"], "raw_tokens": ["how", "cold", "is", "it"], "slots": {}, "intents": [], "recognize_seconds": 0.0011115074157714844}
