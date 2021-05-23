@@ -1,6 +1,6 @@
 ---
 name: "en-us_deepspeech-mozilla"
-version: "1.0"
+version: "1.1"
 
 language:
   name: "english"
@@ -9,19 +9,15 @@ language:
 speech-to-text:
   acoustic-model-type: "deepspeech"
   acoustic-model: !env "${profile_dir}/model/output_graph.pbmm"
-  language-model: !env "${profile_dir}/lm.binary"
-  base-language-model: !env "${profile_dir}/model/lm.binary"
-  trie: !env "${profile_dir}/trie"
-  base-trie: !env "${profile_dir}/model/trie"
+  scorer: !env "${profile_dir}/scorer"
+  base-scorer: !env "${profile_dir}/model/base.scorer"
   alphabet: !env "${profile_dir}/model/alphabet.txt"
   phoneme-pronunciations: false
 
 training:
   acoustic-model-type: "deepspeech"
-  language-model: !env "${profile_dir}/lm.binary"
   large-files:
-    - !env "${profile_dir}/model/lm.binary"
-    - !env "${profile_dir}/model/trie"
+    - !env "${profile_dir}/model/base.scorer"
     - !env "${profile_dir}/model/output_graph.pbmm"
     - !env "${profile_dir}/model/output_graph.tflite"
     - !env "${profile_dir}/base_language_model.fst"
